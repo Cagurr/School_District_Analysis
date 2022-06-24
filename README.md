@@ -59,10 +59,10 @@ Initial analysis summary of schools (with 9th grade test scores):
 If the 9th graders were excluded from the count, then the impact is negligible.  Thomas High School would remain the second best school in the district.  However, if we counted the 9th class in the denominator of the pass-rate calculation, then Thomas High School would be in the bottom five schools in the district.
 
 Revised ranking (10th to 12th graders only):
-![RevisedRank.png](Resources/revisedrank.png)
+![RevisedRank.png](Resources/RevisedRank.png)
 
 Initial ranking (with 9th grade test scores):
-![InitialRank.png](Resources/initialrank.png)
+![InitialRank.png](Resources/InitialRank.png)
 
 ### How does replacing the ninth-grade scores affect the following:
 
