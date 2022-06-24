@@ -32,11 +32,7 @@ Revised analysis and script:
 ![district_summ_new.png](Resources/district_summ_new.png)
 
 Initial summary of districts:
-<<<<<<< HEAD
 ![Newfile.png](Resources/Newfile.png)
-=======
-![district_summ_old3.png](Resources/district_summ_old3.png)
->>>>>>> a0db54de30a3eaa4a36c0586f7e970ab8f84319e
 
 ### How was the school summary affected?
 
@@ -46,9 +42,6 @@ In the initial calculation, Thomas High School's average math scores dropped mor
 
 Revised initial analysis of schools (from step 5 of the Module challenge):
 ![school_summ_new.png](Resources/school_summ_new.png)
-
-Initial analyis summary of schools (with 9th grade test scores):
-![school_summ_old.png](Resources/school_summ_old.png)
 
 After excluding the 9th grade test scores and student counts, Thomas High School's metrics were almost identical to the initial analysis.  That leads me to believe that the 9th grade test scores had an immaterial impact on the outcome.  The images below show the code and impact on the school summary.
 
