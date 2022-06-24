@@ -32,7 +32,11 @@ Revised analysis and script:
 ![district_summ_new.png](Resources/district_summ_new.png)
 
 Initial summary of districts:
+<<<<<<< HEAD
 ![Newfile.png](Resources/Newfile.png)
+=======
+![district_summ_old3.png](Resources/district_summ_old3.png)
+>>>>>>> a0db54de30a3eaa4a36c0586f7e970ab8f84319e
 
 ### How was the school summary affected?
 
