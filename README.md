@@ -2,75 +2,117 @@
 
 ## Overview of School District Analysis
 
-Tom, a Colorado Board of Elections employee, has tasked me to assist him complete an election audit of a recent local congressional election.  The objectives of the election audit include:
+Maria, the chief data scientist for the City School District, has engaged me to help her analyze and present standardized math and reading test scores across 15 different schools to inform future funding allocations.  I am tasked with analyzing every student's test scores, aggregate the data, and shows trends in school performance.  Our analysis will assist school board officials make decisions and prioritize funding across schools under their purview.  The objectives of the analysis include:
 
-   1. Calculate the total number of votes cast.
-   2. Get a complete list of candidates who received votes.
-   3. Calculate the total number of votes each candidate received.
-   4. Calculate the percentage of votes each candidate won.
-   5. Determine the winner of the election based on popular vote.
-   6. Calculate the voter turnout for each county.
-   7. Calculate the percentage of votes from each county.
-   8. Determine the county with the highest voter turnout.
+   1. Read data from flat comma seperated value Excel files.
+   2. Wrangle the student and school datasets to account for missing data, miscoded fields, and ensure readability.
+   3. Merge the datasets to create a comprehensive analysis on school and student performance.
+   4. Calculate the number of students and number of schools.
+   5. Calculate the total budget for each school and each school's budget per student.
+   6. Calculate the average scores per student for math, reading, and both math and reading.
+   7. Calculate the passing rates for each school and the percentage of students that pass their tests.
+   8. Determine the lowest and highest performing schools.
+   9. Create size, school-type, grade-level, school-specific, and spending-related analyses.
 
-While tasks like these are commonly completed using Excel, Tom and I would like to automate the election audit in Python.  Using Python successfully will allow the script to be used to audit other congressional districts, senatorial districts, and local elections. 
-
-We will tally three different voting methods to complete the audit.  They are mail-in ballots, punch cards, and direct recording electronic ballots.  Although the methods for counting each type of ballot is different, the voting data will be consolidated into a single comma-seprated-value Excel file for our audit and certified report on the election results.
-
+After the initial school district analysis was finished, the school board notified Maria and her supervisor that there was evidence of academic dishonesty.  It appeared that the math and reading scores for all 9th graders at Thomas High School was had been altered.  To objectively report the student's test scores, Maria directed me to update the impacted reading and math scores with "NaN" or not a number values.  The following report addresses the findings as a result of the update.
+ 
 ### Resources
 
-* Data Source:  election_results.csv
-* Softward:  Python 3.6.1, Visual Studio Code, 1.38.1
+* Data Source:  schools_complete.csv, students_complete.csv
+* Software:  Python 3.6.1, Visual Studio Code, 1.38.1
+* Packages:  Pandas, NumPy
 
 ## Updated School District Analysis Results
 
-The analysis of the election show that:
+### How was the district summary affected?
 
-* There were 369,711 votes cast in the election.
-* The candidates were:
-  * Charles Casper Stockham
-  * Diana DeGette
-  * Raymon Anthony Doane
+The district summary slighly decreased as a result of the restatement.  As you can see from the images below, the average math score decreased by 0.1 points, but the average reading score was not impacted.  Interestingly, all three passing percentages (math, reading, and both) decreased after the revision.
 
-The image below illustrates the script used to tally the votes for each candidate:
-![SS1-CandidateNamesVote.png](Resources/SS1-CandidatesNamesVotes.png)
+Revised analysis and script:
+![district_summ_new.png](Resources/district_summ_new.png)
 
-* The candidate results were:
-  * Charles Casper Stockham recieved 23.0% of the vote and 85,213 number of votes.
-  * Diana DeGette recieved 73.8% of the vote and 272,892 number of votes.
-  * Raymon Anthony Doane recieved 3.1% of the vote and 11,606 number of votes.
-* The winner of the election was:
-  * Diana DeGette, who received 73.8% of the vote and 272,892 number of votes.
+Initial summary of districts:
+![district_summ_old.png](Resources/district_summ_old.png)
 
-The image below shows the script used to print the results by candidate.
-![SS2-PrintCandidateResults](Resources/SS2-PrintCandidateResults.png)
+### How was the school summary affected?
 
-* The election results by county were:
-  * Jefferson county represented 10.5% of the vote or 38,855 votes.
-  * Denver county represented 82.8% of the vote or 306,055 votes.
-  * Arapahoe county represented 6.7% of the vote or 24,801 votes.
-*The largest voter turnout was seen in Denver county.
+There were two school summaries calculated for Thomas High School.  The initial school summary (calculated in step 5 of the Module challenge) used the total student count as the denominator in the pass rate calculations.  As you will see below, it drastically understates the pass rates, because the entire 9th grade class is counted as failing both math and reading.  
 
-The image below shows the script to print the election results by county.
-![SS3-PrintCountyVotes](Resources/SS3-PrintCountyVotes.png)
+In the initial calculation, Thomas High School's average math scores dropped more than 1.1 points, but their average reading scores increase nearly 0.5 points.  While that seems modest, the changes in the pass rates are much more pronounced.  The pass rates for math decreased by nearly 27 percent, the reading pass rates dropped nearly 28 percent, and the overall pass rate went down 25 percdent.
 
-### PICTURES
+Revised initial analysis of schools (from step 5 of the Module challenge):
+![school_summ_new.png](Resources/school_summ_new.png)
 
-![SS5-Election_Analysis_Terminal.png](Resources/SS5-Election_Analysis_Terminal.png)
+Initial analyis summary of schools (with 9th grade test scores):
+![school_summ_old.png](Resources/school_summ_old.png)
+
+After excluding the 9th grade test scores and student counts, Thomas High School's metrics were almost identical to the initial analysis.  That leads me to believe that the 9th grade test scores had an immaterial impact on the outcome.  The images below show the code and impact on the school summary.
+
+Code to isolate 10th to 12th graders' test results:
+![Script10to12.png](Resources/Script10to12.png)
+
+Revised analysis of schools (10th to 12th graders only):
+![school_summ_new2.png](Resources/school_summ_new2.png)
+
+Initial analysis summary of schools (with 9th grade test scores):
+![school_summ_old2.png](Resources/school_summ_old2.png)
+
+### How does replacing the ninth graders’ math and reading scores affect Thomas High School’s performance relative to the other schools?
+
+If the 9th graders were excluded from the count, then the impact is negligible.  Thomas High School would remain the second best school in the district.  However, if we counted the 9th class in the denominator of the pass-rate calculation, then Thomas High School would be in the bottom five schools in the district.
+
+Revised ranking (10th to 12th graders only):
+![RevisedRank.png](Resources/revisedrank.png)
+
+Initial ranking (with 9th grade test scores):
+![InitialRank.png](Resources/initialrank.png)
+
+### How does replacing the ninth-grade scores affect the following:
+
+  * Math and reading scores by grade
+
+  When rounding to the nearest tenth, math scores by grade did not change except for omitting the 9th grade math scores.
+
+  Revised ranking (10th to 12th graders only):
+  ![RevisedMathGrade.png](Resources/revisedmathgrade.png)
+
+  Initial ranking (with 9th grade test scores):
+  ![InitialMathGrade.png](Resources/initialmathgrade.png)
+
+  When rounding to the nearest tenth, reading scores did not change either except for omitting the 9th grade reading scores. 
+
+  Revised ranking (10th to 12th graders only):
+  ![RevisedReadGrade.png](Resources/revisedreadgrade.png)
+
+  Initial ranking (with 9th grade test scores):
+  ![InitialReadGrade.png](Resources/initialreadgrade.png)
+
+  * Scores by school spending
+
+  School spending was not different as a result of altering the 9th grade test scores.
+
+  ![NewSchoolSpend.png](Resources/newschoolspend.png)
+
+  * Scores by school size
+  
+  Scores by school size did not change.  The figures below differ due to rounding.
+
+  Revised school size (10th to 12th graders only):
+  ![NewSchoolSize.png](Resources/newschoolsize.png)
+
+  Initial school size (with 9th grade test scores):
+  ![OldSchoolSize.png](Resources/oldschoolsize.png)
+
+  * Scores by school type
+
+  Scores by school type also did not change.  The differences shown below are due to rounding.
+
+  Revised school size (10th to 12th graders only):
+  ![NewType.png](Resources/newtype.png)
+
+  Initial school size (with 9th grade test scores):
+  ![OldType.png](Resources/oldtype.png)  
 
 ## School District Analysis Summary
 
-With minor changes, this Python script can be used by the election commission to audit any congressional, senatorial, or local election.  This script will save many hours that would have been spent aggregating, analyzing, and formatting data.  
-
-Few modifications required to reuse the code.  They are as follows:
-
-* Update the folders and file names of the documents to read and write (see image below).  Line 9 includes a reference to the folder location of the raw data and the file name to read.  Line 11 includes a reference to the folder location to save the output analysis and the file name of the analysis.  These references must be updated when reusing the script. 
-
-![SS6-Modify_LoadnSaveFile](Resources/SS6-Modify_LoadnSaveFile.png)
-
-* Update the header and row indices if applicable (see image below).  If the raw data excludes a header row, then the "next" function must be omitted on line 40 to ensure we capture all of the data witing the file.  Similarly, if the raw data is presented in different rows, then the row indices on lines 49 and 52 must be updated to ensure we are capturing the candidate's names and county names respectively.
-
-![SS7-Modify_HeaderCandidateCounty](Resources/SS7-Modify_HeaderCandidateCounty.png)
-
-At a minimum, please consider using this code in parallel with your traditional analyses.  Once you feel comfortable that the script is reliably analyzing the data, you may want to decide to use this script for future analyses.
-
+Of the four metrics previously mentioned, none of them changed as a result of revising the school district analysis. School board officials can confidently use the data without concern.
