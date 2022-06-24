@@ -32,7 +32,7 @@ Revised analysis and script:
 ![district_summ_new.png](Resources/district_summ_new.png)
 
 Initial summary of districts:
-![district_summ_old.png](Resources/district_summ_old.png)
+![district_summ_old.png](Resources/district_summ_old3.png)
 
 ### How was the school summary affected?
 
@@ -74,45 +74,45 @@ Initial ranking (with 9th grade test scores):
   When rounding to the nearest tenth, math scores by grade did not change except for omitting the 9th grade math scores.
 
   Revised ranking (10th to 12th graders only):
-  ![RevisedMathGrade.png](Resources/revisedmathgrade.png)
+  ![RevisedMathGrade.png](Resources/RevisedMathGrade.png)
 
   Initial ranking (with 9th grade test scores):
-  ![InitialMathGrade.png](Resources/initialmathgrade.png)
+  ![InitialMathGrade.png](Resources/InitialMathGrade.png)
 
   When rounding to the nearest tenth, reading scores did not change either except for omitting the 9th grade reading scores. 
 
   Revised ranking (10th to 12th graders only):
-  ![RevisedReadGrade.png](Resources/revisedreadgrade.png)
+  ![RevisedReadGrade.png](Resources/RevisedReadGrade.png)
 
   Initial ranking (with 9th grade test scores):
-  ![InitialReadGrade.png](Resources/initialreadgrade.png)
+  ![InitialReadGrade.png](Resources/InitialReadGrade.png)
 
   * Scores by school spending
 
   School spending was not different as a result of altering the 9th grade test scores.
 
-  ![NewSchoolSpend.png](Resources/newschoolspend.png)
+  ![NewSchoolSpend.png](Resources/NewSchoolSpend.png)
 
   * Scores by school size
   
   Scores by school size did not change.  The figures below differ due to rounding.
 
   Revised school size (10th to 12th graders only):
-  ![NewSchoolSize.png](Resources/newschoolsize.png)
+  ![NewSchoolSize.png](Resources/NewSchoolSize.png)
 
   Initial school size (with 9th grade test scores):
-  ![OldSchoolSize.png](Resources/oldschoolsize.png)
+  ![OldSchoolSize.png](Resources/OldSchoolSize.png)
 
   * Scores by school type
 
   Scores by school type also did not change.  The differences shown below are due to rounding.
 
   Revised school size (10th to 12th graders only):
-  ![NewType.png](Resources/newtype.png)
+  ![NewType.png](Resources/NewType.png)
 
   Initial school size (with 9th grade test scores):
-  ![OldType.png](Resources/oldtype.png)  
+  ![OldType.png](Resources/OldType.png)  
 
 ## School District Analysis Summary
 
-Of the four metrics previously mentioned, none of them changed as a result of revising the school district analysis. School board officials can confidently use the data without concern.
+The largest change resulted from counting all Thomas High School students in the denominator of the percentage calculations.  This greatly skewed the data.  After focusing solely on the 10th to 12th grade Thomas High School students, the district summary statistics decreased slightly.  The average math scores and reading scores also decreased as a result of the revised analysis.  An additional byproduct of excluding the 9th grade test scores was the incomplete dataset for Thomas High School in the analysis by grade.  
