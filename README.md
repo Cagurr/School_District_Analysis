@@ -26,7 +26,7 @@ After the initial school district analysis was finished, the school board notifi
 
 ### How was the district summary affected?
 
-The district summary slighly decreased as a result of the restatement.  As you can see from the images below, the average math score decreased by 0.1 points, but the average reading score was not impacted.  Interestingly, all three passing percentages (math, reading, and both) decreased after the revision.
+The district summary slighly decreased as a result of the restatement.  As you can see from the images below, the average math and reading scores slightly decreased.  Interestingly, all three passing percentages (math, reading, and overall) decreased only a couple of percentage points in the most eggregious cases after the revision.
 
 Revised analysis and script:
 ![district_summ_new.png](Resources/district_summ_new.png)
