@@ -38,7 +38,7 @@ Initial summary of districts:
 
 There were two school summaries calculated for Thomas High School.  The initial school summary (calculated in step 5 of the Module challenge) used the total student count as the denominator in the pass rate calculations.  As you will see below, it drastically understates the pass rates, because the entire 9th grade class is counted as failing both math and reading.  
 
-In the initial calculation, Thomas High School's average math scores dropped nearly 1.1 percentage points, but their average reading scores increase nearly 0.5 points.  While that seems modest, the changes in the pass rates are much more pronounced.  The pass rates for math decreased by nearly 27 percent, the reading pass rates dropped nearly 28 percent, and the overall pass rate went down 25 percdent.
+In the initial calculation, Thomas High School's average math scores dropped nearly 1.1 percentage points, but their average reading scores increase nearly 0.05 points.  While that seems modest, the changes in the pass rates are much more pronounced.  The pass rates for math decreased by nearly 27 percent, the reading pass rates dropped nearly 28 percent, and the overall pass rate went down 25 percdent.
 
 Revised initial analysis of schools (from step 5 of the Module challenge):
 ![school_summ_new.png](Resources/school_summ_new.png)
